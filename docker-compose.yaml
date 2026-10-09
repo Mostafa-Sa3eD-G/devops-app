@@ -1,6 +1,6 @@
 services:
   web:
-    image: mostafasa3ed/devops-app:latest
+    image: mostafasa3ed/devops-app:${IMAGE_TAG}
     ports:
       - "8080:80"
     container_name: devops-app

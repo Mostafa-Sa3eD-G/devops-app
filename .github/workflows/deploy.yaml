@@ -39,13 +39,15 @@ jobs:
           echo "${{ secrets.LINUX_KEY }}" > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ vars.PROD_IP }} >> ~/.ssh/known_hosts
+      
+      - name: get short commit tag
+        run: echo "short_tag=${GITHUB_SHA::7}" >> $GITHUB_ENV
         
       - name: Deploy to Prod
         run: |
           ssh -i ~/.ssh/id_rsa ubuntu@${{ vars.PROD_IP }} << EOF
             cd /home/ubuntu/app
-            docker compose restart
+            export IMAGE_TAG=${{ env.short_tag }}
+            docker compose pull
+            docker compose up -d
           EOF
-
-      
-      
