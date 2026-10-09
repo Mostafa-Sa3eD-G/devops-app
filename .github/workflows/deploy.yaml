@@ -1,0 +1,13 @@
+name: Deploy devops-app
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello world
+        run: echo "hello world"
