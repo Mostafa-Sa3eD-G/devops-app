@@ -1,0 +1,6 @@
+services:
+  web:
+    image: mostafasa3ed/devops-app:latest
+    ports:
+      - "8080:80"
+    container_name: devops-app
