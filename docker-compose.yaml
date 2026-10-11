@@ -4,3 +4,6 @@ services:
     ports:
       - "8080:80"
     container_name: devops-app
+  redis:
+    image: redis:alpine
+    container_name: devops-redis
