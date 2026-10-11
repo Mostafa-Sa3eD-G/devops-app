@@ -7,3 +7,6 @@ def calc_discount(price, discount):
 
 def get_results():
     return "Hello World"
+
+def add_results():
+    return "Hello World"
