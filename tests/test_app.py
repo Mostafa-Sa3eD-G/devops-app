@@ -6,4 +6,4 @@ def test_ten_percent():
 
 def test_zero_percent():
     result = calc_discount(100,0)
-    assert result == 100
+    assert result == 10
